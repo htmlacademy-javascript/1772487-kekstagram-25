@@ -55,24 +55,21 @@ const USER_AVATAR = {MIN:1, MAX: 6};
 const PIC_URL = {MIN:1, MAX: 25};
 
 
-const genComment = () => {
-  return {
-    id: getRandomInt(1, 100),
-    avatar: `img/avatar-${getRandomInt(USER_AVATAR.MIN, USER_AVATAR.MAX)}.svg`,
-    message: COMMENTS[getRandomInt(0,COMMENTS.length-1)],
-    name: NAMES[getRandomInt(0,NAMES.length-1)],
-  }
-};
+const genComment = () => ({
+  id: getRandomInt(1, 100),
+  avatar: `img/avatar-${getRandomInt(USER_AVATAR.MIN, USER_AVATAR.MAX)}.svg`,
+  message: COMMENTS[getRandomInt(0,COMMENTS.length-1)],
+  name: NAMES[getRandomInt(0,NAMES.length-1)],
+});
 
-const getDesscription = () => {
-  return {
-    id: getRandomInt(1, 25),
-    url: `photos/${getRandomInt(1, 25)}.jpg`,
-    likes: getRandomInt(LIKES.MIN ,LIKES.MAX),
-    desscription: DESCRIPTIONS[getRandomInt(0,DESCRIPTIONS.length-1)],
-    comments: Array.from({length: getRandomInt(1, 15)}, genComment)
-  }
-};
+const getDesscription = () => ({
+  id: getRandomInt(1, 25),
+  url: `photos/${getRandomInt(PIC_URL.MIN ,PIC_URL.MAX)}.jpg`,
+  likes: getRandomInt(LIKES.MIN ,LIKES.MAX),
+  desscription: DESCRIPTIONS[getRandomInt(0,DESCRIPTIONS.length-1)],
+  comments: Array.from({length: getRandomInt(1, 15)}, genComment)
+});
 
 
+// eslint-disable-next-line no-unused-vars
 const Desscription = Array.from({length:25}, getDesscription);
