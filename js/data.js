@@ -38,7 +38,7 @@ const USER_AVATAR = {MIN:1, MAX: 6};
 const PIC_URL = {MIN:1, MAX: 25};
 
 
-const genComment = () => ({
+const getComment = () => ({
   id: getRandomInt(1, 100),
   avatar: `img/avatar-${getRandomInt(USER_AVATAR.MIN, USER_AVATAR.MAX)}.svg`,
   message: COMMENTS[getRandomInt(0,COMMENTS.length-1)],
@@ -50,7 +50,7 @@ const getDesscription = () => ({
   url: `photos/${getRandomInt(PIC_URL.MIN ,PIC_URL.MAX)}.jpg`,
   likes: getRandomInt(LIKES.MIN ,LIKES.MAX),
   desscription: DESCRIPTIONS[getRandomInt(0,DESCRIPTIONS.length-1)],
-  comments: Array.from({length: getRandomInt(1, 15)}, genComment)
+  comments: Array.from({length: getRandomInt(1, 15)}, getComment)
 });
 
 
