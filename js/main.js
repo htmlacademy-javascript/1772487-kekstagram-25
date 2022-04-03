@@ -1,3 +1,3 @@
 import './util.js';
-import {getDesscription} from './data.js';
+import './data.js';
 
