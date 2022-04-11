@@ -54,8 +54,5 @@ const getDesscription = () => ({
 });
 
 
-// eslint-disable-next-line no-unused-vars
-const Desscription = () => Array.from({length:25}, getDesscription);
-
 export {getDesscription};
 

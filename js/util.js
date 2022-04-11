@@ -16,4 +16,5 @@ const checkLength = (string, maxLength) => string.length <= maxLength;
 
 checkLength('какой-то текст', 100);
 
+
 export {getRandomInt, checkLength};
