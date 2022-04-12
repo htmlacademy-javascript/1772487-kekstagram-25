@@ -1,4 +1,5 @@
 import {getDesscription} from './data.js';
+// import {showBigPhoto} from './big-photo.js';
 
 const photosList = document.querySelector('.pictures');
 const photoTemplate = document.querySelector('#picture').content.querySelector('.picture');
@@ -12,6 +13,13 @@ const createPhoto = () => {
     newPhoto.querySelector('.picture__img').src = url;
     newPhoto.querySelector('.picture__likes').textContent = likes;
     newPhoto.querySelector('.picture__comments').textContent = comments.length;
+
+    // const openBigSize = () => newPhoto.addEventListener(
+    //   'click', showBigPhoto
+    // );
+
+    // newPhoto.addEventListener('click', openBigSize);
+
     photosListFragment.appendChild(newPhoto);
   });
   photosList.appendChild(photosListFragment);
